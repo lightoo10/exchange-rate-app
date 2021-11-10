@@ -107,5 +107,8 @@
       }
     }
   },
-  "defaultProject": "exchange-rate-app"
+  "defaultProject": "exchange-rate-app",
+  "cli": {
+    "analytics": false
+  }
 }

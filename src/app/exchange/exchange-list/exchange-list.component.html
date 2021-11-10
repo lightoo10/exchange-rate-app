@@ -1,0 +1,6 @@
+<mat-nav-list>
+  <mat-list-item *ngFor="let exchange of lstExchange" (click)="viewDetail(exchange)">
+    <app-exchange-list-item [exchange]="exchange"></app-exchange-list-item>
+    <mat-divider></mat-divider>
+  </mat-list-item>
+</mat-nav-list>

@@ -1,0 +1,7 @@
+<div class="container">
+    <app-exchange-header [title]="'Directorio de Empleados'" ></app-exchange-header>
+    <app-exchange-search  (onSearch)="searchExchange($event)" ></app-exchange-search>
+    <app-exchange-list [lstExchange]="lstExchangeSearch" (onSelected)="selectedExchange($event)" ></app-exchange-list>
+
+</div>
+        

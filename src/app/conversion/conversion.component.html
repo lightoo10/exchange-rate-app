@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h2>Conversion de tipo de cambio</h2>
+            <form [formGroup]="conversionRegisterForm">
+                <mat-form-field class="form-width">
+                    <input matInput placeholder="Moneda origen" formControlName="originCurrency" required>
+                    <mat-error *ngIf="conversionRegisterForm.get('originCurrency').hasError('required')">
+                        Ingrese la moneda origen
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field class="form-width">
+                    <input matInput placeholder="Moneda destino" formControlName="destinationCurrency" required>
+                    <mat-error *ngIf="conversionRegisterForm.get('destinationCurrency').hasError('required')">
+                        Ingrese la moneda destino
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field class="form-width col">
+                    <input matInput placeholder="Monto" type="tel" formControlName="amount" required>
+                    <mat-error *ngIf="conversionRegisterForm.get('amount').hasError('required')">
+                        Ingrese el monto
+                    </mat-error>
+                </mat-form-field>
+                <button color="primary" mat-raised-button  class="border-box b-s my-1 mr-1"
+                  (click)="clearForm()"
+                >
+                  Limpiar
+                </button>
+                <button color="primary" mat-raised-button class="m-2 button-primary-event button-success"
+                (click)="convertExchangeRate(conversionRegisterForm.value)"
+                    [disabled]="!conversionRegisterForm.valid">
+                    Convertir
+                </button>
+            </form>
+
+            <div class="message" *ngIf="execute">
+              {{ amountConverted }}
+            </div>
+        </div>
+    </div>
+</div>
